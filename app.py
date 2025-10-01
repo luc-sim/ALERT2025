@@ -306,6 +306,7 @@ D = st.number_input("Pile diameter D [m]", min_value=0.5, max_value=20.0, value=
 if st.button("Calculate"):
 
     y, z, M, V, sig, W,yt,Vt,Mt,le = py_analysis(L, D, N_el=10, N_it=10, plot = 0, solv = 1, t_fix = 0 )
+    H,M0 = tot_FM(D)
     # Plots
     kh = 11.93*10**6
     La=100
@@ -356,6 +357,7 @@ if st.button("Calculate"):
     ax1.set_xlim([-0.15*D, 0.15*D])
     ax1.set_ylabel("Depth [m]")
     st.pyplot(fig1)
+
 
 
 
