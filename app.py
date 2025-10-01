@@ -303,7 +303,7 @@ st.markdown(
     This app lets you explore how monopile response curves 
     change with embedment depth (L) and diameter (D). The soil is considered to be sand and is modeled with API p-y curves for sand.
     Adjust the parameters and click **Calculate** to generate the plots.
-    The goal is to verify two checks:
+    The goal for ULS is to verify two checks:
     - Displacement at the mudline should be <0.1D (stay within red dotted-line in first graph).
     - Stress in the monopile walls should not exceed steel yield strength (stay within red dotted-lines in second graph).
 
@@ -371,6 +371,7 @@ if st.button("Calculate"):
         axes[i].set_ylabel('Depth [m]')
 
     st.pyplot(fig)
+
 
 
 
