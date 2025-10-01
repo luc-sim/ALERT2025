@@ -326,15 +326,15 @@ if st.button("Calculate"):
             .format(kh/10**6) )
     plt.subplots_adjust(bottom=0.1,top=0.9,left=0.05,right=0.98,wspace=0.25, hspace=0.3)
     lw = 3
-    axes[0].plot(y,z,lineweidth=lw)
+    axes[0].plot(y,z,linewidth=lw)
     axes[0].plot(yt,-np.linspace(0,La,N_oda),color='k',linestyle='--')
     axes[0].plot([D/10,D/10],[z_plot,0], color='r',linestyle=':',linewidth=lw)
     axes[0].set_title('Lateral displacement [m]')
-    axes[1].plot(M/10**6,z,lineweidth=lw)
+    axes[1].plot(M/10**6,z,linewidth=lw)
     axes[1].plot(Mt/10**6,-np.linspace(0,La,N_oda),color='k',linestyle='--')
     axes[1].plot([M0/10**6,M0/10**6],[z_plot,0],color='k',linestyle=':')
     axes[1].set_title('Bending moment [MN.m]')
-    axes[2].plot(V/10**6,z,lineweidth=lw)
+    axes[2].plot(V/10**6,z,linewidth=lw)
     axes[2].plot(Vt/10**6,-np.linspace(0,La,N_oda),color='k',linestyle='--')
     axes[2].plot([H/10**6,H/10**6],[z_plot,0],color='k',linestyle=':')
     AA = np.pi*D*t
@@ -353,6 +353,7 @@ if st.button("Calculate"):
     axes[0].set_ylabel('Depth [m]')
 
     st.pyplot(fig)
+
 
 
 
