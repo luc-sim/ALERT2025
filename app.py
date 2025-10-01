@@ -217,6 +217,11 @@ def py_analysis(L=30.0, D=10.0, N_el=10, N_it=10, plot = 0, solv = 1, t_fix = 0 
         M[i-2] = EI * (y[i-1]-2*y[i]+y[i+1]) / h**2                 # [N.m] bending moment 
         V[i-2] = EI/2 * (-y[i-2]+2*y[i-1]-2*y[i+1]+y[i+2]) / h**3   # [N] shear
         sig[i-2] = M[i-2] * (D/2) / I                               # [Pa] maximum stress
+    kh = 11.93*10**6
+    La=100
+    N_ela = 250
+    N_oda = N_ela+1
+    yt,Vt,Mt,le =theo_curves(La,D,N_ela,H,M0,EI,kh)
     return y[2:-2], z[2:-2], M, V, sig, W, yt, Vt, Mt, le
 
 def theo_curves(L,D,N_el,H,M,EI,kh):
@@ -351,6 +356,7 @@ if st.button("Calculate"):
     ax1.set_xlim([-0.15*D, 0.15*D])
     ax1.set_ylabel("Depth [m]")
     st.pyplot(fig1)
+
 
 
 
