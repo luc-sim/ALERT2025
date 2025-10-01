@@ -308,10 +308,16 @@ st.markdown(
     - Stress in the monopile walls should not exceed steel yield strength (stay within red dotted-lines in second graph).
 
     Calculations of the wind and wave forces are done in the background of the app. Note that it does take into account the diameter into the calculation of the wave forces.
-    The following figure illustrates the problem
+    
+    The following figure illustrates the problem.
     """
 )
 st.image("enonce pour app.png", caption="Illustration of the problem")
+st.markdown(
+    """
+    Note that the thickness of the pile wall is changed within the program with : t=min⁡(0.00635+D/100,0.09).
+    """
+)
 
 # Inputs
 L = st.number_input("Embedment depth L [m]", min_value=10.0, max_value=30.0, value=30.0, step=0.25)
@@ -365,6 +371,7 @@ if st.button("Calculate"):
         axes[i].set_ylabel('Depth [m]')
 
     st.pyplot(fig)
+
 
 
 
