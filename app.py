@@ -304,8 +304,11 @@ st.markdown(
     change with embedment depth (L) and diameter (D). The soil is considered to be sand and is modeled with API p-y curves for sand.
     Adjust the parameters and click **Calculate** to generate the plots.
     The goal is to verify two checks:
-    - Displacement at the mudline should be <0.1D (first graph).
-    - Stress in the monopile walls should not exceed steel yield strength (second graph).
+    - Displacement at the mudline should be <0.1D (stay within red dotted-line in first graph).
+    - Stress in the monopile walls should not exceed steel yield strength (stay within red dotted-lines in second graph).
+
+    Calculations of the wind and wave forces are done in the background of the app. Note that it does take into account the diameter into the calculation of the wave forces.
+    The following figure illustrates the problem
     """
 )
 st.image("enonce pour app.png", caption="Illustration of the problem")
@@ -362,6 +365,7 @@ if st.button("Calculate"):
         axes[i].set_ylabel('Depth [m]')
 
     st.pyplot(fig)
+
 
 
 
