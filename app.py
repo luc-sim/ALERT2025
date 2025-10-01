@@ -304,8 +304,10 @@ if st.button("Calculate"):
     # Plot 1
     fig1, ax1 = plt.subplots()
     ax1.plot(y, -z)
-    ax1.set_title("Curve 1: Load–Displacement (mock)")
-    ax1.set_xlabel("Displacement (normalized)")
-    ax1.set_ylabel("Load (normalized)")
+    ax1.set_title('Lateral displacement [m]')
+    ax1.set_xlabel("Displacement [m]")
+    ax1.set_xlim([-0.15*D, 0.15*D])
+    ax1.set_ylabel("Depth [m]")
     st.pyplot(fig1)
+
 
