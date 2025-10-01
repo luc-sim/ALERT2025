@@ -298,6 +298,17 @@ def solver_1(N_od, L, h, EI, H, M, k_sec):
 
 # ---------- Streamlit App ----------
 st.title("Monopile monotonic response")
+st.markdown(
+    """
+    This app lets you explore how monopile response curves 
+    change with embedment depth (L) and diameter (D). The soil is considered to be sand and is modeled with API p-y curves for sand.
+    Adjust the parameters and click **Calculate** to generate the plots.
+    The goal is to verify two checks:
+    - Displacement at the mudline should be <0.1D (first graph).
+    - Stress in the monopile walls should not exceed steel yield strength (second graph).
+    """
+)
+st.image("enonce pour app.png", caption="Illustration of the problem", use_column_width=True)
 
 # Inputs
 L = st.number_input("Embedment depth L [m]", min_value=1.0, max_value=100.0, value=20.0, step=1.0)
@@ -351,6 +362,7 @@ if st.button("Calculate"):
         axes[i].set_ylabel('Depth [m]')
 
     st.pyplot(fig)
+
 
 
 
