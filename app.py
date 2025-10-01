@@ -321,9 +321,7 @@ if st.button("Calculate"):
     plt.rcParams.update({'font.size': 20})
     fig, axes = plt.subplots(4,1,figsize=(10,40))
     fig.suptitle('For D={0:.2f} m, L={1:.2f} m and t={2:.0f} mm, we get y(0)/D={3:.3f},\n a bending stress safety factor {5:.2f}, and Steel amount {4:.0f} t\n'\
-            .format(D,L,t*1000,y[2]/D,W,355*10**6/(max(np.abs(M))*D/2/I))+\
-        'The theoretical profile is pictured in dashed black for kh={0:.1f} MN'\
-            .format(kh/10**6) )
+            .format(D,L,t*1000,y[2]/D,W,355*10**6/(max(np.abs(M))*D/2/I)) )
     plt.subplots_adjust(bottom=0.1,top=0.9,left=0.05,right=0.98,wspace=0.25, hspace=0.3)
     lw = 3
     axes[0].plot(y,z,linewidth=lw)
@@ -353,6 +351,7 @@ if st.button("Calculate"):
     axes[0].set_ylabel('Depth [m]')
 
     st.pyplot(fig)
+
 
 
 
