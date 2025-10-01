@@ -360,7 +360,9 @@ if st.button("Calculate"):
     st.pyplot(fig)
 
     st.write(y)
+    st.write(z)
     
+
 
 
 
