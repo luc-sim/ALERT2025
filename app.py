@@ -324,7 +324,7 @@ if st.button("Calculate"):
         'The theoretical profile is pictured in dashed black for kh={0:.1f} MN'\
             .format(kh/10**6) )
     plt.subplots_adjust(bottom=0.1,top=0.9,left=0.05,right=0.98,wspace=0.25, hspace=0.3)
-    axes[0,0].plot(y,-z)
+    axes[0,0].plot(y,z)
     #axes[0,0].plot(yt,-np.linspace(0,La,N_oda),color='k',linestyle='--')
     #axes[0,0].plot([D/10,D/10],[z_plot,0], color='r',linestyle=':')
     #axes[0,0].set_title('Lateral displacement [m]')
@@ -362,6 +362,7 @@ if st.button("Calculate"):
     st.write(y)
     st.write(z)
     
+
 
 
 
