@@ -217,7 +217,7 @@ def py_analysis(L=30.0, D=10.0, N_el=10, N_it=10, plot = 0, solv = 1, t_fix = 0 
         M[i-2] = EI * (y[i-1]-2*y[i]+y[i+1]) / h**2                 # [N.m] bending moment 
         V[i-2] = EI/2 * (-y[i-2]+2*y[i-1]-2*y[i+1]+y[i+2]) / h**3   # [N] shear
         sig[i-2] = M[i-2] * (D/2) / I                               # [Pa] maximum stress
-    return y[2:-2], z[2:-2], M, V, sig, W, yt,Vt,Mt,le
+    return y[2:-2], z[2:-2], M, V, sig, W, yt, Vt, Mt, le
 
 def theo_curves(L,D,N_el,H,M,EI,kh):
     lamb = (kh*D/(4*EI))**0.25
@@ -300,7 +300,7 @@ D = st.number_input("Pile diameter D [m]", min_value=0.5, max_value=20.0, value=
 
 if st.button("Calculate"):
 
-    y, z, M, V, sig, W,yt,Vt,Mt,le = py_analysis(L, D, N_el=10, N_it=10, plot = 4, solv = 1, t_fix = 0 )
+    y, z, M, V, sig, W,yt,Vt,Mt,le = py_analysis(L, D, N_el=10, N_it=10, plot = 0, solv = 1, t_fix = 0 )
     # Plots
     kh = 11.93*10**6
     La=100
@@ -351,6 +351,7 @@ if st.button("Calculate"):
     ax1.set_xlim([-0.15*D, 0.15*D])
     ax1.set_ylabel("Depth [m]")
     st.pyplot(fig1)
+
 
 
 
