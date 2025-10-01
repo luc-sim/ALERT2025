@@ -356,7 +356,8 @@ if st.button("Calculate"):
     ax1.set_xlabel("Displacement [m]")
     ax1.set_xlim([-0.15*D, 0.15*D])
     ax1.set_ylabel("Depth [m]")
-    st.pyplot(fig1)
+    st.pyplot(fig)
+
 
 
 
