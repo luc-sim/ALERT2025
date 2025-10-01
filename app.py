@@ -312,7 +312,7 @@ st.image("enonce pour app.png", caption="Illustration of the problem")
 
 # Inputs
 L = st.number_input("Embedment depth L [m]", min_value=10.0, max_value=30.0, value=20.0, step=0.25)
-D = st.number_input("Pile diameter D [m]", min_value=4, max_value=15, value=5.0, step=0.1)
+D = st.number_input("Pile diameter D [m]", min_value=4.0, max_value=15.0, value=5.0, step=0.1)
 
 if st.button("Calculate"):
 
@@ -362,6 +362,7 @@ if st.button("Calculate"):
         axes[i].set_ylabel('Depth [m]')
 
     st.pyplot(fig)
+
 
 
 
