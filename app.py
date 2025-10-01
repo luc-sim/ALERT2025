@@ -300,5 +300,12 @@ D = st.number_input("Pile diameter D [m]", min_value=0.5, max_value=20.0, value=
 
 if st.button("Calculate"):
 
-    py_analysis(L, D, N_el=10, N_it=10, plot = 4, solv = 1, t_fix = 0 )
-#    x, c1, c2, c3 = generate_curves(L, D)
+    y, z, M, V, sig, W = py_analysis(L, D, N_el=10, N_it=10, plot = 4, solv = 1, t_fix = 0 )
+    # Plot 1
+    fig1, ax1 = plt.subplots()
+    ax1.plot(y, -z)
+    ax1.set_title("Curve 1: Load–Displacement (mock)")
+    ax1.set_xlabel("Displacement (normalized)")
+    ax1.set_ylabel("Load (normalized)")
+    st.pyplot(fig1)
+
