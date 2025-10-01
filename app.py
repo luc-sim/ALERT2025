@@ -358,8 +358,9 @@ if st.button("Calculate"):
     ax1.set_ylabel("Depth [m]")
     st.pyplot(fig)
 
-    st.print(y)
+    st.write(y)
     
+
 
 
 
