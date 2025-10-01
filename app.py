@@ -312,8 +312,7 @@ if st.button("Calculate"):
     # z_plot = -4*le
     z_plot = -25
     fig, axes = plt.subplots(1,4,figsize=(16,8))
-        fig.suptitle(
-            'For D={0:.2f} m, L={1:.2f} m and t={2:.0f} mm, we get y(0)/D={3:.3f}, a bending stress safety factor {5:.2f}, and Steel amount {4:.0f} t\n'\
+        fig.suptitle('For D={0:.2f} m, L={1:.2f} m and t={2:.0f} mm, we get y(0)/D={3:.3f}, a bending stress safety factor {5:.2f}, and Steel amount {4:.0f} t\n'\
                 .format(D,L,t*1000,y[2]/D,W,355*10**6/(max(np.abs(M))*D/2/I))+\
             'The theoretical profile is pictured in dashed black for kh={0:.1f} MN'\
                 .format(kh/10**6) )
@@ -343,4 +342,5 @@ if st.button("Calculate"):
             axes[i].set_ylim([z_plot, 0])
             axes[i].grid(linestyle=':',linewidth=1)
         axes[0].set_ylabel('Depth [m]')
+
 
