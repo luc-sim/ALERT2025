@@ -328,7 +328,7 @@ if st.button("Calculate"):
     lw = 3
     axes[0].plot(y,z,lineweidth=lw)
     axes[0].plot(yt,-np.linspace(0,La,N_oda),color='k',linestyle='--')
-    axes[0].plot([D/10,D/10],[z_plot,0], color='r',linestyle=':',lineweidth=3)
+    axes[0].plot([D/10,D/10],[z_plot,0], color='r',linestyle=':',linewidth=lw)
     axes[0].set_title('Lateral displacement [m]')
     axes[1].plot(M/10**6,z,lineweidth=lw)
     axes[1].plot(Mt/10**6,-np.linspace(0,La,N_oda),color='k',linestyle='--')
@@ -339,12 +339,12 @@ if st.button("Calculate"):
     axes[2].plot([H/10**6,H/10**6],[z_plot,0],color='k',linestyle=':')
     AA = np.pi*D*t
     taum = 2*AA*355/3**0.5/np.pi
-    axes[2].plot([taum,taum],[z_plot,0],color='r',linestyle=':',lineweidth=lw)
-    axes[2].plot([-taum,-taum],[z_plot,0],color='r',linestyle=':',lineweidth=lw)
+    axes[2].plot([taum,taum],[z_plot,0],color='r',linestyle=':',linewidth=lw)
+    axes[2].plot([-taum,-taum],[z_plot,0],color='r',linestyle=':',linewidth=lw)
     axes[2].set_title('Shear force [MN]')
     axes[3].plot(sig/10**6,z,linewidth=lw)
     axes[3].plot(M*D/2/I/2/10**6+((M*D/2/I/2)**2+(V/(2*np.pi*D/2*t))**2)**0.5/10**6,z,color='g',linestyle='--')
-    axes[3].plot([355,355],[z_plot,0],color='r',linestyle=':',lineweidth=3)
+    axes[3].plot([355,355],[z_plot,0],color='r',linestyle=':',linewidth=3)
     axes[3].set_title('Bending stress [MPa]')
     axes[0].set_xlim([-0.15*D, 0.15*D])
     for i in range(4):
@@ -353,6 +353,7 @@ if st.button("Calculate"):
     axes[0].set_ylabel('Depth [m]')
 
     st.pyplot(fig)
+
 
 
 
