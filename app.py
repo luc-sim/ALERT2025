@@ -318,6 +318,7 @@ if st.button("Calculate"):
     t = min( (6.35/1000 + D/100), 0.09 )    # [m] wall thickness
     I       = np.pi/4 * ((D/2)**4 - (D/2-t)**4) # Second moment of area
     EI      = E * I
+    plt.rcParams.update({'font.size': 20})
     fig, axes = plt.subplots(4,1,figsize=(10,40))
     fig.suptitle('For D={0:.2f} m, L={1:.2f} m and t={2:.0f} mm, we get y(0)/D={3:.3f},\n a bending stress safety factor {5:.2f}, and Steel amount {4:.0f} t\n'\
             .format(D,L,t*1000,y[2]/D,W,355*10**6/(max(np.abs(M))*D/2/I))+\
@@ -351,6 +352,7 @@ if st.button("Calculate"):
     axes[0].set_ylabel('Depth [m]')
 
     st.pyplot(fig)
+
 
 
 
