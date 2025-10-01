@@ -297,7 +297,7 @@ def solver_1(N_od, L, h, EI, H, M, k_sec):
 
 
 # ---------- Streamlit App ----------
-st.title("Monopile Response Explorer")
+st.title("Monopile monotonic response")
 
 # Inputs
 L = st.number_input("Embedment depth L [m]", min_value=1.0, max_value=100.0, value=20.0, step=1.0)
@@ -357,6 +357,10 @@ if st.button("Calculate"):
     ax1.set_xlim([-0.15*D, 0.15*D])
     ax1.set_ylabel("Depth [m]")
     st.pyplot(fig)
+
+    st.print(y)
+    
+
 
 
 
