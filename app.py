@@ -341,7 +341,7 @@ if st.button("Calculate"):
     axes[2].plot([-taum,-taum],[z_plot,0],color='r',linestyle=':')
     axes[2].set_title('Shear force [MN]')
     axes[3].plot(sig/10**6,-z)
-    axes[3].plot(M*D/2/I/2/10**6+((M*D/2/I/2)**2+(V/(2*np.pi*D/2*t))**2)**0.5/10**6,-z[2:-2],color='g',linestyle='--')
+    axes[3].plot(M*D/2/I/2/10**6+((M*D/2/I/2)**2+(V/(2*np.pi*D/2*t))**2)**0.5/10**6,-z,color='g',linestyle='--')
     axes[3].plot([355,355],[z_plot,0],color='r',linestyle=':')
     axes[3].set_title('Bending stress [MPa]')
     axes[0].set_xlim([-0.15*D, 0.15*D])
@@ -357,6 +357,7 @@ if st.button("Calculate"):
     ax1.set_xlim([-0.15*D, 0.15*D])
     ax1.set_ylabel("Depth [m]")
     st.pyplot(fig1)
+
 
 
 
