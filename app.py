@@ -324,31 +324,31 @@ if st.button("Calculate"):
         'The theoretical profile is pictured in dashed black for kh={0:.1f} MN'\
             .format(kh/10**6) )
     plt.subplots_adjust(bottom=0.1,top=0.9,left=0.05,right=0.98,wspace=0.25, hspace=0.3)
-    axes[0].plot(y,-z)
-    axes[0].plot(yt,-np.linspace(0,La,N_oda),color='k',linestyle='--')
-    axes[0].plot([D/10,D/10],[z_plot,0], color='r',linestyle=':')
-    axes[0].set_title('Lateral displacement [m]')
-    axes[1].plot(M/10**6,-z)
-    axes[1].plot(Mt/10**6,-np.linspace(0,La,N_oda),color='k',linestyle='--')
-    axes[1].plot([M0/10**6,M0/10**6],[z_plot,0],color='k',linestyle=':')
-    axes[1].set_title('Bending moment [MN.m]')
-    axes[2].plot(V/10**6,-z)
-    axes[2].plot(Vt/10**6,-np.linspace(0,La,N_oda),color='k',linestyle='--')
-    axes[2].plot([H/10**6,H/10**6],[z_plot,0],color='k',linestyle=':')
+    axes[0,0].plot(y,-z)
+    axes[0,0].plot(yt,-np.linspace(0,La,N_oda),color='k',linestyle='--')
+    axes[0,0].plot([D/10,D/10],[z_plot,0], color='r',linestyle=':')
+    axes[0,0].set_title('Lateral displacement [m]')
+    axes[0,1].plot(M/10**6,-z)
+    axes[0,1].plot(Mt/10**6,-np.linspace(0,La,N_oda),color='k',linestyle='--')
+    axes[0,1].plot([M0/10**6,M0/10**6],[z_plot,0],color='k',linestyle=':')
+    axes[0,1].set_title('Bending moment [MN.m]')
+    axes[1,0].plot(V/10**6,-z)
+    axes[1,0].plot(Vt/10**6,-np.linspace(0,La,N_oda),color='k',linestyle='--')
+    axes[1,0].plot([H/10**6,H/10**6],[z_plot,0],color='k',linestyle=':')
     AA = np.pi*D*t
     taum = 2*AA*355/3**0.5/np.pi
-    axes[2].plot([taum,taum],[z_plot,0],color='r',linestyle=':')
-    axes[2].plot([-taum,-taum],[z_plot,0],color='r',linestyle=':')
-    axes[2].set_title('Shear force [MN]')
-    axes[3].plot(sig/10**6,-z)
-    axes[3].plot(M*D/2/I/2/10**6+((M*D/2/I/2)**2+(V/(2*np.pi*D/2*t))**2)**0.5/10**6,-z,color='g',linestyle='--')
-    axes[3].plot([355,355],[z_plot,0],color='r',linestyle=':')
-    axes[3].set_title('Bending stress [MPa]')
-    axes[0].set_xlim([-0.15*D, 0.15*D])
+    axes[1,0].plot([taum,taum],[z_plot,0],color='r',linestyle=':')
+    axes[1,0].plot([-taum,-taum],[z_plot,0],color='r',linestyle=':')
+    axes[1,0].set_title('Shear force [MN]')
+    axes[1,1].plot(sig/10**6,-z)
+    axes[1,1].plot(M*D/2/I/2/10**6+((M*D/2/I/2)**2+(V/(2*np.pi*D/2*t))**2)**0.5/10**6,-z,color='g',linestyle='--')
+    axes[1,1].plot([355,355],[z_plot,0],color='r',linestyle=':')
+    axes[1,1].set_title('Bending stress [MPa]')
+    axes[0,0].set_xlim([-0.15*D, 0.15*D])
     for i in range(4):
         axes[i].set_ylim([z_plot, 0])
         axes[i].grid(linestyle=':',linewidth=1)
-    axes[0].set_ylabel('Depth [m]')
+    axes[0,0].set_ylabel('Depth [m]')
     
     fig1, ax1 = plt.subplots()
     ax1.plot(y, -z)
@@ -360,6 +360,7 @@ if st.button("Calculate"):
 
     st.write(y)
     
+
 
 
 
