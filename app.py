@@ -345,9 +345,10 @@ if st.button("Calculate"):
     axes[1,1].plot([355,355],[z_plot,0],color='r',linestyle=':')
     axes[1,1].set_title('Bending stress [MPa]')
     axes[0,0].set_xlim([-0.15*D, 0.15*D])
-    for i in range(4):
-        axes[i].set_ylim([z_plot, 0])
-        axes[i].grid(linestyle=':',linewidth=1)
+    for i in range(2):
+        for j in range(2):
+            axes[i,j].set_ylim([z_plot, 0])
+            axes[i,j].grid(linestyle=':',linewidth=1)
     axes[0,0].set_ylabel('Depth [m]')
     
     fig1, ax1 = plt.subplots()
@@ -360,6 +361,7 @@ if st.button("Calculate"):
 
     st.write(y)
     
+
 
 
 
