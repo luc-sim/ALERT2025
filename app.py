@@ -339,7 +339,7 @@ if st.button("Calculate"):
     I       = np.pi/4 * ((D/2)**4 - (D/2-t)**4) # Second moment of area
     EI      = E * I
     plt.rcParams.update({'font.size': 20})
-    fig, axes = plt.subplots(4,1,figsize=(10,40))
+    fig, axes = plt.subplots(3,1,figsize=(10,30))
     fig.suptitle('For D={0:.2f} m, L={1:.2f} m and t={2:.0f} mm, we get y(0)/D={3:.3f},\n a bending stress safety factor {5:.2f}, and Steel amount {4:.0f} t\n'\
             .format(D,L,t*1000,y[2]/D,W,355*10**6/(max(np.abs(M))*D/2/I)) )
     plt.subplots_adjust(bottom=0.1,top=0.9,left=0.05,right=0.98,wspace=0.25, hspace=0.3)
@@ -352,25 +352,26 @@ if st.button("Calculate"):
     axes[2].plot(Mt/10**6,-np.linspace(0,La,N_oda),color='k',linestyle='--')
     axes[2].plot([M0/10**6,M0/10**6],[z_plot,0],color='k',linestyle=':')
     axes[2].set_title('Bending moment [MN.m]')
-    axes[3].plot(V/10**6,z,linewidth=lw)
-    axes[3].plot(Vt/10**6,-np.linspace(0,La,N_oda),color='k',linestyle='--')
-    axes[3].plot([H/10**6,H/10**6],[z_plot,0],color='k',linestyle=':')
+    #axes[3].plot(V/10**6,z,linewidth=lw)
+    #axes[3].plot(Vt/10**6,-np.linspace(0,La,N_oda),color='k',linestyle='--')
+    #axes[3].plot([H/10**6,H/10**6],[z_plot,0],color='k',linestyle=':')
     AA = np.pi*D*t
     taum = 2*AA*355/3**0.5/np.pi
-    axes[3].plot([taum,taum],[z_plot,0],color='r',linestyle=':',linewidth=lw)
-    axes[3].plot([-taum,-taum],[z_plot,0],color='r',linestyle=':',linewidth=lw)
-    axes[3].set_title('Shear force [MN]')
+    #axes[3].plot([taum,taum],[z_plot,0],color='r',linestyle=':',linewidth=lw)
+    #axes[3].plot([-taum,-taum],[z_plot,0],color='r',linestyle=':',linewidth=lw)
+    #axes[3].set_title('Shear force [MN]')
     axes[1].plot(sig/10**6,z,linewidth=lw)
     axes[1].plot(M*D/2/I/2/10**6+((M*D/2/I/2)**2+(V/(2*np.pi*D/2*t))**2)**0.5/10**6,z,color='g',linestyle='--')
     axes[1].plot([355,355],[z_plot,0],color='r',linestyle=':',linewidth=3)
     axes[1].set_title('Bending stress [MPa]')
     axes[0].set_xlim([-0.15*D, 0.15*D])
-    for i in range(4):
+    for i in range(3):
         axes[i].set_ylim([z_plot, 0])
         axes[i].grid(linestyle=':',linewidth=1)
         axes[i].set_ylabel('Depth [m]')
 
     st.pyplot(fig)
+
 
 
 
