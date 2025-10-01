@@ -312,7 +312,7 @@ if st.button("Calculate"):
     La=100
     N_ela = 250
     N_oda = N_ela+1
-    z_plot = 40
+    z_plot = 30
     E=210e9                                     # Elastic modulus of pile material (Pa)
     # Pile geometry
     t = min( (6.35/1000 + D/100), 0.09 )    # [m] wall thickness
@@ -351,6 +351,7 @@ if st.button("Calculate"):
     axes[1].set_ylabel('Depth [m]')
 
     st.pyplot(fig)
+
 
 
 
