@@ -344,13 +344,14 @@ if st.button("Calculate"):
     axes[3].plot(M*D/2/I/2/10**6+((M*D/2/I/2)**2+(V/(2*np.pi*D/2*t))**2)**0.5/10**6,z,color='g',linestyle='--')
     axes[3].plot([355,355],[z_plot,0],color='r',linestyle=':')
     axes[3].set_title('Bending stress [MPa]')
-    axes[1].set_xlim([-0.15*D, 0.15*D])
+    axes[0].set_xlim([-0.15*D, 0.15*D])
     for i in range(4):
             axes[i].set_ylim([z_plot, 0])
             axes[i].grid(linestyle=':',linewidth=1)
-    axes[1].set_ylabel('Depth [m]')
+    axes[0].set_ylabel('Depth [m]')
 
     st.pyplot(fig)
+
 
 
 
