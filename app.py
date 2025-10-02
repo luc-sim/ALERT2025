@@ -320,8 +320,8 @@ st.markdown(
 )
 
 # Inputs
-L = st.number_input("Embedment depth L [m]", min_value=10.0, max_value=30.0, value=30.0, step=0.25)
-D = st.number_input("Pile diameter D [m]", min_value=4.0, max_value=12.0, value=12.0, step=0.1)
+L = st.number_input("Embedment depth 10.0<L<30.0 [m]", min_value=10.0, max_value=30.0, value=30.0, step=0.25)
+D = st.number_input("Pile diameter 4.0<D<12.0 [m]", min_value=4.0, max_value=12.0, value=12.0, step=0.1)
 
 if st.button("Calculate"):
 
@@ -371,6 +371,7 @@ if st.button("Calculate"):
         axes[i].set_ylabel('Depth [m]')
 
     st.pyplot(fig)
+
 
 
 
